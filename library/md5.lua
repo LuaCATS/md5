@@ -1,4 +1,5 @@
 ---@meta
+---The definitions are developed in this repository: https://github.com/LuaCATS/md5
 
 ---
 --- `md5`, by Roberto Ierusalimschy http://www.inf.puc-rio.br/~roberto/md5/md5-5/md5.html.
