@@ -2,7 +2,7 @@
 ---The definitions are developed in this repository: https://github.com/LuaCATS/md5
 
 ---
---- `md5`, by Roberto Ierusalimschy http://www.inf.puc-rio.br/~roberto/md5/md5-5/md5.html.
+---`md5`, by Roberto Ierusalimschy http://www.inf.puc-rio.br/~roberto/md5/md5-5/md5.html.
 ---
 ---This library offers basic cryptographic facilities for Lua 5.0: a hash (digest) function, an a pair crypt/decrypt.
 ---
