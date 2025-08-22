@@ -29,9 +29,11 @@
 ---The definitions are developed in this repository: https://github.com/LuaCATS/md5
 
 ---
----`md5`, by Roberto Ierusalimschy http://www.inf.puc-rio.br/~roberto/md5/md5-5/md5.html.
+---`md5`, by Roberto Ierusalimschy
+---http://www.inf.puc-rio.br/~roberto/md5/md5-5/md5.html.
 ---
----This library offers basic cryptographic facilities for Lua 5.0: a hash (digest) function, an a pair crypt/decrypt.
+---This library offers basic cryptographic facilities for Lua 5.0: a hash
+---(digest) function, an a pair crypt/decrypt.
 ---
 ---All functions are registered inside a table `md5`.
 ---
@@ -41,16 +43,13 @@ local md5 = {}
 ---
 ---Compute the MD5 message-digest of the string `message`.
 ---
----This function takes as input a message of arbitrary length and content
----and returns as output a 128-bit "fingerprint" (or "message digest")
----of the input.
+---This function takes as input a message of arbitrary length and content and
+---returns as output a 128-bit "fingerprint" (or "message digest") of the input.
 ---
----The output is formated as a binary string with 16 characters.
----It is conjectured that it is computationally infeasible to produce
----two messages having the same message digest, or to produce any
----message having a given pre-specified target message digest.
----(see
----RFC 1321)
+---The output is formated as a binary string with 16 characters. It is
+---conjectured that it is computationally infeasible to produce two messages
+---having the same message digest, or to produce any message having a given
+---pre-specified target message digest. (see RFC 1321)
 ---
 ---__Example:__
 ---
@@ -72,10 +71,11 @@ local md5 = {}
 function md5.sum(message) end
 
 ---
----Compute the MD5 lower case hexadecimal message-digest of the string `message`.
+---Compute the MD5 lower case hexadecimal message-digest of the string
+---`message`.
 ---
----Similar to `md5.sum()`,
----but returns its value as a string of 32 hexadecimal digits (lower case letters).
+---Similar to `md5.sum()`, but returns its value as a string of 32 hexadecimal
+---digits (lower case letters).
 ---
 ---__Example:__
 ---
@@ -94,19 +94,17 @@ function md5.sumhexa(message) end
 ---
 ---Encrypt a string, using MD5 in CFB (Cipher-feedback mode).
 ---
----`message` is an arbitrary binary string to be encrypted.
----`key` is an arbitrary binary string to be used as a key.
----`seed` is an arbitrary binary string to be used as a seed;
----Returns the cyphertext (as a binary string).
+---`message` is an arbitrary binary string to be encrypted. `key` is an
+---arbitrary binary string to be used as a key. `seed` is an arbitrary binary
+---string to be used as a seed; Returns the cyphertext (as a binary string).
 ---
----If no seed is provided,
----the function uses the result of `os.time()` as a seed.
----It is recommended that you use different seeds for each message;
----the seed itself is not private, and should contain no private data,
----because it goes plain in the beginning of the encrypted message.
+---If no seed is provided, the function uses the result of `os.time()` as a
+---seed. It is recommended that you use different seeds for each message; the
+---seed itself is not private, and should contain no private data, because it
+---goes plain in the beginning of the encrypted message.
 ---
----The length of the cyphertext is the length of the message plus the
----length of the seed plus one.
+---The length of the cyphertext is the length of the message plus the length of
+---the seed plus one.
 ---
 ---__Example:__
 ---
@@ -133,10 +131,8 @@ function md5.crypt(message, key, seed) end
 ---
 ---Decrypt a string.
 ---
----The input `message` must be the result of a previous call
----to `crypt`.
----For any `message`, `key`,
----and `seed`, we have that
+---The input `message` must be the result of a previous call to `crypt`. For any
+---`message`, `key`, and `seed`, we have that
 ---
 ---```lua
 ---local encrypted = md5.crypt('message', '123', 'seed')
@@ -155,8 +151,8 @@ function md5.decrypt(message, key) end
 ---
 ---Do a bit-a-bit exclusive `or` of strings `s1` and `s2`.
 ---
----Both strings must have the same length,
----which will be also the length of the resulting string.
+---Both strings must have the same length, which will be also the length of the
+---resulting string.
 ---
 ---__Example:__
 ---
